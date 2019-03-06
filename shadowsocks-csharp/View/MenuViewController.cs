@@ -97,8 +97,10 @@ namespace Shadowsocks.View {
             _notifyIcon.MouseClick += notifyIcon1_Click;
             //_notifyIcon.MouseDoubleClick += notifyIcon1_DoubleClick;
 
+            /*
             updateChecker = new UpdateChecker();
             updateChecker.NewVersionFound += updateChecker_NewVersionFound;
+            */
 
             updateFreeNodeChecker = new UpdateFreeNode();
             updateFreeNodeChecker.NewFreeNodeFound += updateFreeNodeChecker_NewFreeNodeFound;
@@ -106,6 +108,8 @@ namespace Shadowsocks.View {
             updateSubscribeManager = new UpdateSubscribeManager();
 
             LoadCurrentConfiguration();
+
+            /*
             timerDetectVirus = new System.Timers.Timer(1000.0 * 30);
             timerDetectVirus.Elapsed += timerDetectVirus_Elapsed;
             timerDetectVirus.Start();
@@ -115,15 +119,20 @@ namespace Shadowsocks.View {
             timerDelayCheckUpdate.Elapsed += timerDelayCheckUpdate_Elapsed;
             timerDelayCheckUpdate.Start();
 
+            */
+
             timerUpdateLatency = new System.Timers.Timer(1000.0 * 3);
             timerUpdateLatency.Elapsed += timerUpdateLatency_Elapsed;
             timerUpdateLatency.Start();
+            
         }
 
         private void timerDetectVirus_Elapsed(object sender, System.Timers.ElapsedEventArgs e) {
+            /*
             if (Utils.isVirusExist()) {
                 Quit();
             }
+            */
         }
 
         private void timerDelayCheckUpdate_Elapsed(object sender, System.Timers.ElapsedEventArgs e) {
@@ -302,15 +311,15 @@ namespace Shadowsocks.View {
                 new MenuItem("-"),
                 CreateMenuItem("Reset password...", new EventHandler(ResetPasswordItem_Click)),
                 CreateMenuGroup("Help", new MenuItem[] {
-                    CreateMenuItem("Check update", new EventHandler(CheckUpdate_Click)),
+                    //CreateMenuItem("Check update", new EventHandler(CheckUpdate_Click)),
                     CreateMenuItem("Show logs...", new EventHandler(ShowLogItem_Click)),
                     CreateMenuItem("Open wiki...", new EventHandler(OpenWiki_Click)),
-                    CreateMenuItem("Feedback...", new EventHandler(FeedbackItem_Click)),
+                    //CreateMenuItem("Feedback...", new EventHandler(FeedbackItem_Click)),
                     new MenuItem("-"),
                     CreateMenuItem("Gen custom QRCode...", new EventHandler(showURLFromQRCode)),
                     new MenuItem("-"),
                     CreateMenuItem("About...", new EventHandler(AboutItem_Click)),
-                    CreateMenuItem("Donate...", new EventHandler(DonateItem_Click)),
+                    //CreateMenuItem("Donate...", new EventHandler(DonateItem_Click)),
                 }),
                 CreateMenuItem("Quit", new EventHandler(Quit_Click))
             });
@@ -874,6 +883,7 @@ namespace Shadowsocks.View {
                 serverLogForm.Close();
                 serverLogForm = null;
             }
+            /*
             if (timerDetectVirus != null) {
                 timerDetectVirus.Elapsed -= timerDetectVirus_Elapsed;
                 timerDetectVirus.Stop();
@@ -884,6 +894,7 @@ namespace Shadowsocks.View {
                 timerDelayCheckUpdate.Stop();
                 timerDelayCheckUpdate = null;
             }
+            */
             if (timerUpdateLatency != null) {
                 timerUpdateLatency.Elapsed -= timerUpdateLatency_Elapsed;
                 timerUpdateLatency.Stop();

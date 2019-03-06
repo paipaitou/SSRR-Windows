@@ -39,10 +39,12 @@ namespace Shadowsocks
                 }
             }
 
+            /*
             if (Utils.isVirusExist())
             {
                 return;
             }
+            */
 
             using (Mutex mutex = new Mutex(false, "Global\\ShadowsocksR_" + Application.StartupPath.GetHashCode()))
             {

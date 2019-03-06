@@ -496,9 +496,9 @@ namespace Shadowsocks.Util
             int offense_count = 0;
             string[] virus_process =
             {
-                "360Safe","ZhuDongFangYu",
-                "2345SoftSvc","2345RTProtect",
-                "BaiduAnSvc","BaiduHips"
+                //"360Safe","ZhuDongFangYu",
+                //"2345SoftSvc","2345RTProtect",
+                //"BaiduAnSvc","BaiduHips"
             };
             foreach (string process_name in virus_process)
             {
@@ -508,9 +508,9 @@ namespace Shadowsocks.Util
             string registry_prefix = IntPtr.Size == 4 ? @"Software\Microsoft\Windows\CurrentVersion\App Paths\" : @"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\App Paths\";
             string[] virus_registry =
             {
-                "360safe.exe","360se6.exe",
-                "2345MPCSafe.exe","2345Explorer.exe",
-                "baidubrowser.exe"
+                //"360safe.exe","360se6.exe",
+                //"2345MPCSafe.exe","2345Explorer.exe",
+                //"baidubrowser.exe"
             };
             foreach (string registry_name in virus_registry)
             {
