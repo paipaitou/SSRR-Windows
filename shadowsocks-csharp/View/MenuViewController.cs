@@ -97,10 +97,10 @@ namespace Shadowsocks.View {
             _notifyIcon.MouseClick += notifyIcon1_Click;
             //_notifyIcon.MouseDoubleClick += notifyIcon1_DoubleClick;
 
-            /*
+            
             updateChecker = new UpdateChecker();
             updateChecker.NewVersionFound += updateChecker_NewVersionFound;
-            */
+            
 
             updateFreeNodeChecker = new UpdateFreeNode();
             updateFreeNodeChecker.NewFreeNodeFound += updateFreeNodeChecker_NewFreeNodeFound;
